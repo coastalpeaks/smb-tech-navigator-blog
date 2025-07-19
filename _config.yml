@@ -1,0 +1,63 @@
+# Site
+name: "SMB Tech Navigator"
+title: "SMB Tech Navigator"
+description: "Empowering small businesses to navigate modern technology with confidence, transforming complex IT challenges into competitive advantages through practical guidance and authentic expertise."
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: ""
+google_analytics: ''
+disqus: ''
+mailchimp-list: ''
+include: ["_pages"]
+permalink: /:title/
+
+# Authors
+authors:
+  technavigator:
+    name: SMB Tech Navigator
+    display_name: Tech Navigator
+    avatar: 'assets/images/avatar.png'
+    email: contact@smbtechnavigator.com
+    web: https://smbtechnavigator.com
+    twitter: https://twitter.com/smbtechnavigator
+    description: "Expert technology guidance for small and medium businesses. Combining development expertise with practical implementation strategies to help SMBs navigate modern technology challenges and opportunities."
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
