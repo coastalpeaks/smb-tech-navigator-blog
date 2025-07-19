@@ -1,0 +1,677 @@
+/**
+ * Layout Styles
+ * 
+ * Global layout components, grid systems, and structural elements.
+ * Handles page structure, navigation, sections, and responsive containers.
+ */
+
+/* ============================================
+   BASE LAYOUT
+   ============================================ */
+
+/**
+ * Global HTML and Body Styles
+ */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base font size for rem calculations */
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   NAVIGATION LAYOUT
+   ============================================ */
+
+/**
+ * Fixed Navigation Header
+ * Sticky navigation with smooth transitions and mobile support
+ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--nav-shadow);
+  z-index: var(--z-index-fixed);
+  transition: var(--transition-base);
+}
+
+/* Navigation scrolled state */
+.navbar.scrolled {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-base);
+}
+
+.nav-container {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--nav-padding);
+}
+
+/* Brand/Logo */
+.nav-brand {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-colors);
+}
+
+.brand-link:hover {
+  color: var(--color-secondary);
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-base);
+  transition: var(--transition-colors);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+  background-color: var(--color-gray-50);
+}
+
+/* Active link indicator */
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transform: translateX(-50%);
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  margin: 2px 0;
+  transition: var(--transition-base);
+}
+
+/* Mobile menu toggle animation */
+.nav-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ============================================
+   MAIN CONTENT LAYOUT
+   ============================================ */
+
+/**
+ * Main content container with top padding for fixed nav
+ */
+main {
+  padding-top: var(--nav-height);
+}
+
+/* ============================================
+   SECTION LAYOUTS
+   ============================================ */
+
+/**
+ * Base Section Styling
+ * Consistent spacing and layout for all sections
+ */
+section {
+  padding: var(--space-20) 0;
+  position: relative;
+}
+
+.section-container {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Alternating section backgrounds */
+section:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+/* ============================================
+   HERO SECTION LAYOUT
+   ============================================ */
+
+/**
+ * Hero Section - Full viewport height with centered content
+ */
+.hero-section {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero background decoration */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(35, 47, 62, 0.03) 100%);
+  z-index: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width-content);
+  padding: 0 var(--space-4);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+/* Hero Image Container */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 120px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.image-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+}
+
+/* Professional Photo Styles */
+.profile-photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-xl);
+  border: 4px solid var(--color-white);
+  transition: var(--transition-base);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* Hero Text Content */
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-greeting {
+  display: block;
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.hero-name {
+  display: block;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-4);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.hero-description {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-8);
+}
+
+/* Hero Contact Information */
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.contact-item i {
+  color: var(--color-primary);
+  width: 16px;
+  text-align: center;
+}
+
+/* Hero Action Buttons */
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   EXPERIENCE SECTION LAYOUT
+   ============================================ */
+
+/**
+ * Experience Section with Timeline Layout
+ */
+.experience-section {
+  background-color: var(--bg-secondary);
+}
+
+.experience-header {
+  margin-bottom: var(--space-6);
+}
+
+.job-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.company-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.company-name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.job-duration {
+  font-weight: var(--font-weight-medium);
+}
+
+.experience-achievements {
+  margin-bottom: var(--space-6);
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+}
+
+.achievement-list li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+}
+
+.achievement-list li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ============================================
+   SKILLS SECTION LAYOUT
+   ============================================ */
+
+/**
+ * Skills Section Grid Layout
+ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+.skill-category {
+  background-color: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.category-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.category-title i {
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Certification Section */
+.certification-section {
+  background-color: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.certification-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.certification-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.cert-icon {
+  font-size: var(--font-size-3xl);
+  color: var(--color-secondary);
+}
+
+.cert-details h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.cert-details p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   ACHIEVEMENTS SECTION LAYOUT
+   ============================================ */
+
+/**
+ * Achievements Grid Layout
+ */
+.achievements-section {
+  background-color: var(--bg-secondary);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-8);
+}
+
+/* Patent List Styling */
+.patent-list {
+  margin: var(--space-6) 0;
+}
+
+.patent-item {
+  padding: var(--space-4);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-4);
+}
+
+.patent-item:last-child {
+  margin-bottom: 0;
+}
+
+.patent-item h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.patent-item p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+/* ============================================
+   CONTACT SECTION LAYOUT
+   ============================================ */
+
+/**
+ * Contact Section Layout  
+ */
+.contact-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+}
+
+.contact-section .section-title,
+.contact-section .section-subtitle {
+  color: var(--color-white);
+}
+
+.contact-section .section-title::after {
+  background: linear-gradient(90deg, var(--color-white), var(--color-secondary));
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ============================================
+   FOOTER LAYOUT
+   ============================================ */
+
+/**
+ * Site Footer
+ */
+.site-footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-white);
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.footer-content p {
+  margin-bottom: var(--space-2);
+  color: var(--color-gray-300);
+}
+
+.footer-content p:last-child {
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   UTILITY LAYOUTS
+   ============================================ */
+
+/**
+ * Common Layout Utilities
+ */
+
+/* Container Utilities */
+.container {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 var(--space-4);
+}
+
+/* Grid Utilities */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.grid-gap-4 { gap: var(--space-4); }
+.grid-gap-6 { gap: var(--space-6); }
+.grid-gap-8 { gap: var(--space-8); }
+
+/* Flex Utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Position Utilities */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* Width and Height Utilities */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; }
+
+/* Visibility Utilities */
+.hidden { display: none; }
+.visible { display: block; }
+
+/* Overflow Utilities */
+.overflow-hidden { overflow: hidden; }
+.overflow-x-hidden { overflow-x: hidden; }
+.overflow-y-hidden { overflow-y: hidden; }

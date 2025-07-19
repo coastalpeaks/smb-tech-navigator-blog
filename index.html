@@ -1,61 +1,346 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMB Tech Navigator - Empowering small businesses to navigate modern technology with confidence, transforming complex IT challenges into competitive advantages through practical guidance and authentic expertise.">
+    <meta name="keywords" content="SMB Tech Navigator, Small Business Technology, Cloud Migration, Cybersecurity, AI Tools, Tech Guidance, Business IT">
+    <meta name="author" content="SMB Tech Navigator">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="SMB Tech Navigator - Practical Technology Guidance">
+    <meta property="og:description" content="Empowering small businesses to navigate modern technology with confidence. Expert guidance on cloud migration, cybersecurity, AI tools, and technology implementation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://coastalpeaks.github.io/smb-tech-navigator-blog/">
+    <meta property="og:image" content="images/tech-business-hero.jpg">
+    
+    <title>SMB Tech Navigator - Practical Technology Guidance for Growing Businesses</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/personal-brand.css">
+    <link rel="stylesheet" href="css/blog-storytelling.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono:wght@400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+</head>
 
-{% if page.url == "/" %}
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home" class="brand-link">
+                    <span class="brand-name">SMB Tech Navigator</span>
+                    <span class="brand-tagline">Practical Tech Guidance</span>
+                </a>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#tech-articles" class="nav-link">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link coffee-chat-btn">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<!-- Featured
-================================================== -->
-<section class="featured-posts">
-    <div class="section-title">
-        <h2><span>Featured</span></h2>
-    </div>
-    <div class="row">
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with Coastal Background -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <img src="images/DSCF8189.jpg" alt="Coastal view" class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-intro">
+                        <h1 class="hero-title">Navigate Technology with Confidence</h1>
+                        <p class="hero-subtitle">Transforming complex IT challenges into competitive advantages for growing businesses</p>
+                    </div>
+                    
+                    <div class="hero-description">
+                        <p>
+                            Practical technology guidance for small and medium businesses. From cloud migration to cybersecurity, we bridge the gap between cutting-edge innovation and real-world implementation.
+                        </p>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#tech-articles" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Explore Articles
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
 
-    {% for post in site.posts %}
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About SMB Tech Navigator</h2>
+                        <div class="about-story">
+                            <p>
+                                We bridge the gap between cutting-edge innovation and practical implementation for the 96% of SMBs who lack critical tech expertise. Our focus is on actionable solutions that work for growing businesses, not enterprise complexity.
+                            </p>
+                            <p>
+                                Small and medium businesses face unprecedented technology challenges: cloud migration decisions, cybersecurity threats, AI implementation opportunities, and budget constraints. We provide expert guidance that combines technical depth with business practicality.
+                            </p>
+                            <p>
+                                This is where we share practical implementation strategies, real-world case studies, and cost-effective solutions. From cloud optimization guides to cybersecurity checklists, every piece of content is designed to help SMBs make informed technology decisions.
+                            </p>
+                            <div class="about-philosophy">
+                                <h3>Our Approach:</h3>
+                                <ul>
+                                    <li>Practical implementation over theoretical discussions</li>
+                                    <li>Budget-conscious recommendations with clear ROI metrics</li>
+                                    <li>Real-world case studies from actual SMB implementations</li>
+                                    <li>Expert commentary from certified professionals</li>
+                                    <li>Independent recommendations based on what works</li>
+                                    <li>Step-by-step guides for immediate implementation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <img src="images/DSCF4152.jpg" alt="Coastal perspective" class="about-image">
+                        <div class="visual-caption">
+                            <p>"Sometimes you need to paddle out to see the bigger picture"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        {% if post.featured == true %}
+        <!-- Tech Articles Section -->
+        <section id="tech-articles" class="blog-section">
+            <div class="section-container">
+                <header class="section-header">
+                    <h2 class="section-title">Featured Articles</h2>
+                    <p class="section-subtitle">Practical technology guidance for small and medium businesses</p>
+                </header>
+                
+                <div class="blog-grid">
+                    <!-- Article Card 1 -->
+                    <article class="story-card">
+                        <div class="card-image">
+                            <img src="images/DSCF8072.jpg" alt="Cloud migration strategy" loading="lazy">
+                            <div class="card-category">Cloud Migration</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">SMB Cloud Migration Guide 2025: AWS vs Azure vs Google Cloud</h3>
+                            <p class="card-excerpt">
+                                A comprehensive comparison of cloud platforms for small and medium businesses, with practical migration strategies and cost optimization tips. 71% of SMBs favor AWS, but which platform is right for your business?
+                            </p>
+                            <div class="card-meta">
+                                <span class="read-time">12 min read</span>
+                                <time datetime="2025-01-19">Jan 19</time>
+                            </div>
+                        </div>
+                    </article>
 
-            {% include featuredbox.html %}
+                    <!-- Article Card 2 -->
+                    <article class="story-card">
+                        <div class="card-image">
+                            <img src="images/DSCF3021.jpg" alt="AI tools for business" loading="lazy">
+                            <div class="card-category">AI & Automation</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">5 AI Tools Every SMB Should Consider in 2025</h3>
+                            <p class="card-excerpt">
+                                Practical AI tools that deliver immediate ROI for small and medium businesses. From Claude for content creation to Zapier for automation — implementation guides and cost-benefit analysis included.
+                            </p>
+                            <div class="card-meta">
+                                <span class="read-time">10 min read</span>
+                                <time datetime="2025-01-19">Jan 19</time>
+                            </div>
+                        </div>
+                    </article>
 
-        {% endif %}
+                    <!-- Article Card 3 -->
+                    <article class="story-card">
+                        <div class="card-image">
+                            <img src="images/DSCF1610.jpg" alt="Cybersecurity for SMBs" loading="lazy">
+                            <div class="card-category">Cybersecurity</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Cybersecurity Checklist for SMBs: 30 Essential Steps</h3>
+                            <p class="card-excerpt">
+                                A comprehensive cybersecurity checklist specifically designed for small and medium businesses. 96% of SMBs lack critical cybersecurity skills — this practical guide addresses that gap.
+                            </p>
+                            <div class="card-meta">
+                                <span class="read-time">15 min read</span>
+                                <time datetime="2025-01-19">Jan 19</time>
+                            </div>
+                        </div>
+                    </article>
 
-    {% endfor %}
+                    <!-- Article Card 4 -->
+                    <article class="story-card">
+                        <div class="card-image">
+                            <img src="images/DSCF8261.jpg" alt="Data analytics for SMBs" loading="lazy">
+                            <div class="card-category">Data Analytics</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Data Analytics on a Budget: Tools Under $50/Month</h3>
+                            <p class="card-excerpt">
+                                Small businesses need data-driven insights without enterprise costs. Discover affordable analytics tools and implementation strategies that deliver actionable business intelligence for growing companies.
+                            </p>
+                            <div class="card-meta">
+                                <span class="read-time">8 min read</span>
+                                <time datetime="2025-01-15">Jan 15</time>
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
-    </div>
-</section>
+                <div class="blog-cta">
+                    <h3>Stay Updated on SMB Tech Trends</h3>
+                    <p>Get weekly insights on technology trends, implementation guides, and cost-effective solutions delivered to your inbox</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-{% endif %}
 
-<!-- Posts Index
-================================================== -->
-<section class="recent-posts">
+        <!-- Contact Section -->
+        <section id="contact" class="coffee-chat-section">
+            <div class="section-container">
+                <div class="coffee-chat-content">
+                    <div class="coffee-visual">
+                        <i class="fas fa-handshake coffee-icon"></i>
+                        <h2>Get Expert Guidance</h2>
+                    </div>
+                    <div class="coffee-text">
+                        <p>
+                            Need help implementing technology solutions in your business? We're here to provide practical, actionable advice tailored to your specific challenges and budget.
+                        </p>
+                        <p>
+                            Whether you're planning a cloud migration, evaluating cybersecurity solutions, or exploring AI implementation, we can help you make informed decisions.
+                        </p>
+                        <div class="coffee-details">
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>SMB Focus:</strong> Specialized guidance for 5-500 employee businesses</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span><strong>Budget-Conscious:</strong> Solutions that fit SMB resource constraints</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-rocket"></i>
+                                <span><strong>Implementation-Focused:</strong> Practical guidance you can act on immediately</span>
+                            </div>
+                        </div>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your business email" required>
+                                <small class="student-note">We typically respond within 24 hours</small>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="3" placeholder="Tell us about your technology challenge or question..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Get Guidance
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="section-title">
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <h3>SMB Tech Navigator</h3>
+                        <p class="footer-tagline">Practical technology guidance for growing businesses</p>
+                        <div class="footer-social">
+                            <a href="https://www.linkedin.com/company/smbtechnavigator" target="_blank" rel="noopener">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:contact@smbtechnavigator.com" class="email-contact">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Explore</h4>
+                            <ul>
+                                <li><a href="#tech-articles">Articles</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Topics</h4>
+                            <ul>
+                                <li><a href="#tech-articles">Cloud Migration</a></li>
+                                <li><a href="#tech-articles">Cybersecurity</a></li>
+                                <li><a href="#tech-articles">AI & Automation</a></li>
+                                <li><a href="#tech-articles">Data Analytics</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; <span class="current-year">2025</span> SMB Tech Navigator. Empowering businesses through practical technology guidance.</p>
+                    <div class="footer-student-note">
+                        <i class="fas fa-handshake"></i>
+                        <span>Ready to navigate your technology challenges? Let's talk.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        <h2><span>Latest Articles</span></h2>
-
-    </div>
-
-    <div class="row listrecent">
-
-        {% for post in paginator.posts %}
-
-        {% include postbox.html %}
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-<!-- Pagination
-================================================== -->
-<div class="bottompagination">
-<div class="pointerup"><i class="fa fa-caret-up"></i></div>
-<span class="navigation" role="navigation">
-    {% include pagination.html %}
-</span>
-</div>
-
+    <!-- JavaScript Modules -->
+    <script src="js/utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/personal-brand.js"></script>
+</body>
+</html>
